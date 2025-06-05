@@ -15,9 +15,9 @@ Jinja2==3.1.6
 jsonschema==4.24.0
 jsonschema-specifications==2025.4.1
 kiwisolver==1.4.8
-Locales
+Locales==0.0.2
 MarkupSafe==3.0.2
-matplotlib
+matplotlib==3.10.3
 narwhals==1.41.0
 numpy==2.2.6
 packaging==24.2
@@ -27,7 +27,7 @@ protobuf==6.31.1
 pyarrow==20.0.0
 pydeck==0.9.1
 pyparsing==3.2.3
-python-dateutil
+python-dateutil==2.9.0.post0
 pytz==2025.2
 referencing==0.36.2
 requests==2.32.3
