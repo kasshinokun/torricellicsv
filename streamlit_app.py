@@ -13,11 +13,7 @@ def loadFromInside():
     timeInSeconds = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 123]
 
     heightInCentimeters = [22.25, 21.0, 20.0, 18.8, 17.75, 16.85, 15.9, 15.0, 14.1, 13.15, 12.5, 11.6, 11.0, 10.125, 9.75, 9.0, 8.4, 7.6, 7.1, 6.85, 6.4, 6.0, 5.55, 5.4, 5.1, 5.0]
-    
-    if not locale.getdefaultlocale()[0] == 'pt_BR':
-        dfInside = pd.DataFrame(list(zip(timeInSeconds, heightInCentimeters)), columns=['Time (s)', 'Height (cm)'])
-    else:
-        dfInside = pd.DataFrame(list(zip(timeInSeconds, heightInCentimeters)), columns=['Tempo (s)','Altura (cm)']) 
+    dfInside = pd.DataFrame(list(zip(timeInSeconds, heightInCentimeters)), columns=['Time (s)','Height (cm)']) 
     return dfInside
 
 # --- 1. TorricelliCalculator (Python adaptation) ---
@@ -410,6 +406,7 @@ def portuguese_program():
         try:
             # Carrega no Pandas Dataframe os valores ​​predefinidos pela função
             df = loadFromInside()
+            df = df.rename(columns={'Time (s)': 'Tempo (s)', 'Height (cm)': 'Altura (cm)'})
             # Exibe dados brutos (opcional, para verificação)
             st.subheader("Prévia dos Dados Experimentais Brutos")
             st.dataframe(df.head())
@@ -488,6 +485,7 @@ def portuguese_program():
         5.0,16.0
         ```
         """)
+
 # PT_BR: Define título da página com base no idioma do sistema operacional
 # EN_US: Set page title based on operating system language
 setLocale() 
